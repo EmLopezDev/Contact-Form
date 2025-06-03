@@ -17,6 +17,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     @include u.breakpoint(small) {
         padding: u.rem(40);

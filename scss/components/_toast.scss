@@ -1,0 +1,27 @@
+@use "../utils/" as u;
+
+.toast {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(8);
+    width: min(80%, u.rem(450));
+    position: absolute;
+    top: u.rem(-200);
+    background-color: var(--color-grey-900);
+    padding: u.rem(24);
+    border-radius: u.rem(12);
+
+    & span {
+        display: flex;
+        gap: u.rem(8);
+        color: var(--color-white);
+
+        @include u.body-md-bold;
+    }
+
+    & p {
+        color: var(--color-green-200);
+
+        @include u.body-sm;
+    }
+}
