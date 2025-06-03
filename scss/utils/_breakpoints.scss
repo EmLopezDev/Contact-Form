@@ -1,7 +1,7 @@
 @use "functions" as f;
 
 $breakpoints: (
-    "small": f.em(600),
+    "small": f.em(650),
 );
 
 @mixin breakpoint($size) {
