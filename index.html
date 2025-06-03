@@ -13,37 +13,52 @@
             sizes="32x32"
             href="./assets/images/favicon-32x32.png"
         />
-
-        <title>Frontend Mentor | Contact form</title>
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="./dist/styles.css"
+        />
+        <title>Contact form</title>
     </head>
     <body>
-        <main>
-            <h1>Contact Us</h1>
-            <form novalidate>
-                <label for="first_name">
-                    First Name *
+        <main class="card">
+            <h1 class="card__heading">Contact Us</h1>
+            <form
+                class="card__form"
+                novalidate
+            >
+                <div class="card__form--full-name">
+                    <label for="first_name">First Name *</label>
                     <input
                         id="first_name"
                         type="text"
                         required
                     />
-                </label>
-                <label for="last_name">
-                    Last Name *
+                    <label for="last_name">Last Name *</label>
                     <input
                         id="last_name"
                         type="text"
                         required
                     />
-                </label>
-                <label for="email">
-                    Email *
-                    <input
-                        id="email"
-                        type="email"
-                        required
-                    />
-                </label>
+                </div>
+                <label for="email">Email Address*</label>
+                <input
+                    id="email"
+                    type="email"
+                    required
+                />
                 <fieldset>
                     <legend>Query Type *</legend>
                     <label for="general">
@@ -62,14 +77,12 @@
                         Support Request
                     </label>
                 </fieldset>
-                <label for="message">
-                    Message *
-                    <textarea
-                        id="message"
-                        type="text"
-                        required
-                    ></textarea>
-                </label>
+                <label for="message">Message *</label>
+                <textarea
+                    id="message"
+                    type="text"
+                    required
+                ></textarea>
                 <label for="consent">
                     <input
                         id="consent"
@@ -82,7 +95,7 @@
             </form>
             <!-- <div>
                 <img
-                    src="./assets/images/icon-success-check.svg"
+                    src="./images/icon-success-check.svg"
                     alt=""
                 />
                 <span>Message Sent!</span>

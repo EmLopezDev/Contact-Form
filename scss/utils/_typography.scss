@@ -1,0 +1,41 @@
+@use "functions" as f;
+
+$font-family: "Karla";
+$font-size-sm: f.rem(16);
+$font-size-md: f.rem(18);
+$font-size-lg: f.rem(32);
+$font-weight-bold: 700;
+$line-height-sm: 100%;
+$line-height-md: 150%;
+$letter-spacing-none: 0;
+$letter-spacing-sm: f.rem(-1);
+
+@mixin heading {
+    font-family: $font-family, sans-serif;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-sm;
+    letter-spacing: $letter-spacing-sm;
+}
+
+@mixin body-md {
+    font-family: $font-family, sans-serif;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+    letter-spacing: $letter-spacing-none;
+}
+
+@mixin body-md-bold {
+    font-family: $font-family, sans-serif;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-md;
+    letter-spacing: $letter-spacing-none;
+}
+
+@mixin body-sm {
+    font-family: $font-family, sans-serif;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+    letter-spacing: $letter-spacing-none;
+}

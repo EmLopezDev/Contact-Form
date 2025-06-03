@@ -1,0 +1,98 @@
+@use "../utils/" as u;
+
+.card {
+    background-color: var(--color-white);
+    padding: u.rem(24);
+    border-radius: u.rem(16);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__heading {
+        color: var(--color-grey-900);
+        margin-bottom: u.rem(32);
+
+        @include u.heading;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &--full-name {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & label {
+            color: var(--color-grey-900);
+            margin-bottom: u.rem(8);
+
+            @include u.body-sm;
+        }
+
+        & label + input {
+            height: u.rem(52);
+            border-radius: u.rem(8);
+            border: 1px solid var(--color-grey-500);
+            margin-bottom: u.rem(24);
+            padding: u.rem(12) u.rem(24);
+        }
+
+        & fieldset {
+            border: none;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: u.rem(24);
+            gap: u.rem(16);
+
+            & legend {
+                color: var(--color-grey-900);
+                margin-bottom: u.rem(8);
+
+                @include u.body-sm;
+            }
+
+            & label {
+                height: u.rem(52);
+                padding: u.rem(12) u.rem(24);
+                border: 1px solid var(--color-grey-500);
+                border-radius: u.rem(8);
+                color: var(--color-grey-900);
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                gap: u.rem(12);
+
+                @include u.body-md;
+            }
+        }
+
+        & textarea {
+            height: u.rem(240);
+            width: 100%;
+            border-radius: u.rem(8);
+            border: 1px solid var(--color-grey-500);
+            margin-bottom: u.rem(40);
+            padding: u.rem(12) u.rem(24);
+            resize: none;
+
+            & + label {
+                display: flex;
+                align-items: center;
+                gap: u.rem(16);
+                margin-bottom: u.rem(40);
+            }
+        }
+
+        & button {
+            height: u.rem(60);
+            background-color: var(--color-green-600);
+            border: 1px solid var(--color-green-600);
+            border-radius: u.rem(8);
+            color: var(--color-white);
+
+            @include u.body-md-bold;
+        }
+    }
+}
