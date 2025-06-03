@@ -20,6 +20,6 @@ body {
     position: relative;
 
     @include u.breakpoint(small) {
-        padding: u.rem(40);
+        padding: u.rem(128) u.rem(40);
     }
 }
