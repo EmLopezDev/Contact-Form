@@ -55,6 +55,9 @@ button {
             padding: u.rem(12) u.rem(24);
             margin-top: u.rem(8);
             cursor: pointer;
+            color: var(--color-grey-900);
+
+            @include u.body-md;
 
             &:hover {
                 border-color: var(--color-green-600);
@@ -141,6 +144,9 @@ button {
             padding: u.rem(12) u.rem(24);
             cursor: pointer;
             resize: none;
+            color: var(--color-grey-900);
+
+            @include u.body-md;
 
             &:hover,
             &:focus {

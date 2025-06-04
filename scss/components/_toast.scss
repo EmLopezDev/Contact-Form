@@ -5,11 +5,13 @@
     flex-direction: column;
     gap: u.rem(8);
     width: min(80%, u.rem(450));
-    position: absolute;
+    position: fixed;
     top: u.rem(-200);
     background-color: var(--color-grey-900);
     padding: u.rem(24);
     border-radius: u.rem(12);
+    z-index: 1;
+    transition: top 600ms;
 
     & span {
         display: flex;
