@@ -47,10 +47,11 @@
                         First Name *
                         <input
                             id="first_name"
+                            class="card__form--input"
                             type="text"
                             required
                         />
-                        <span class="error-message">
+                        <span class="error-message hidden">
                             This field is required
                         </span>
                     </label>
@@ -61,10 +62,11 @@
                         Last Name *
                         <input
                             id="last_name"
+                            class="card__form--input"
                             type="text"
                             required
                         />
-                        <span class="error-message">
+                        <span class="error-message hidden">
                             This field is required
                         </span>
                     </label>
@@ -76,10 +78,11 @@
                     Email Address*
                     <input
                         id="email"
+                        class="card__form--input"
                         type="email"
                         required
                     />
-                    <span class="error-message">
+                    <span class="error-message hidden">
                         Please enter a valid email address
                     </span>
                 </label>
@@ -103,7 +106,9 @@
                         Support Request
                     </label>
                 </fieldset>
-                <span class="error-message">Please select a query type</span>
+                <span class="error-message hidden">
+                    Please select a query type
+                </span>
                 <label
                     class="card__form--message"
                     for="message"
@@ -111,9 +116,12 @@
                     Message *
                     <textarea
                         id="message"
+                        class="card__form--textarea"
                         required
                     ></textarea>
-                    <span class="error-message">This field is required</span>
+                    <span class="error-message hidden">
+                        This field is required
+                    </span>
                 </label>
 
                 <label
@@ -127,7 +135,7 @@
                     />
                     I consent to being contacted by the team *
                 </label>
-                <span class="error-message">
+                <span class="error-message hidden">
                     To submit this form, please consent to being contacted
                 </span>
                 <button type="submit">Submit</button>

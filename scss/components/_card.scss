@@ -46,22 +46,22 @@ button {
             color: var(--color-grey-900);
 
             @include u.body-sm;
+        }
 
-            & input {
-                height: u.rem(52);
-                border-radius: u.rem(8);
-                border: 1px solid var(--color-grey-500);
-                padding: u.rem(12) u.rem(24);
-                margin-top: u.rem(8);
-                cursor: pointer;
+        &--input {
+            height: u.rem(52);
+            border-radius: u.rem(8);
+            border: 1px solid var(--color-grey-500);
+            padding: u.rem(12) u.rem(24);
+            margin-top: u.rem(8);
+            cursor: pointer;
 
-                &:hover {
-                    border-color: var(--color-green-600);
-                }
+            &:hover {
+                border-color: var(--color-green-600);
+            }
 
-                &:focus {
-                    border-color: var(--color-green-600);
-                }
+            &:focus {
+                border-color: var(--color-green-600);
             }
         }
 
@@ -130,25 +130,25 @@ button {
             color: var(--color-grey-900);
 
             @include u.body-sm;
+        }
 
-            & textarea {
-                height: u.rem(240);
-                width: 100%;
-                margin-top: u.rem(8);
-                border-radius: u.rem(8);
-                border: 1px solid var(--color-grey-500);
-                padding: u.rem(12) u.rem(24);
-                cursor: pointer;
-                resize: none;
+        &--textarea {
+            height: u.rem(240);
+            width: 100%;
+            margin-top: u.rem(8);
+            border-radius: u.rem(8);
+            border: 1px solid var(--color-grey-500);
+            padding: u.rem(12) u.rem(24);
+            cursor: pointer;
+            resize: none;
 
-                &:hover,
-                &:focus {
-                    border-color: var(--color-green-600);
-                }
+            &:hover,
+            &:focus {
+                border-color: var(--color-green-600);
+            }
 
-                @include u.breakpoint(small) {
-                    height: u.rem(130);
-                }
+            @include u.breakpoint(small) {
+                height: u.rem(130);
             }
         }
 
@@ -156,7 +156,7 @@ button {
             display: flex;
             align-items: center;
             gap: u.rem(16);
-            margin-top: u.rem(14);
+            margin-top: u.rem(16);
             cursor: pointer;
 
             & input {
@@ -186,7 +186,7 @@ button {
             border-radius: u.rem(8);
             color: var(--color-white);
             cursor: pointer;
-            margin-top: u.rem(16);
+            margin-top: u.rem(20);
 
             @include u.body-md-bold;
 
@@ -198,14 +198,17 @@ button {
     }
 }
 
-.error-state {
-    border-color: var(--color-red);
-}
-
 .error-message {
     padding: u.rem(8) 0;
     color: var(--color-red);
-    opacity: 1;
 
     @include u.body-sm;
+}
+
+.error-border {
+    border-color: var(--color-red);
+}
+
+.hidden {
+    opacity: 0;
 }
