@@ -43,7 +43,6 @@ button {
             display: flex;
             flex-direction: column;
             width: 100%;
-            gap: u.rem(8);
             color: var(--color-grey-900);
 
             @include u.body-sm;
@@ -52,8 +51,17 @@ button {
                 height: u.rem(52);
                 border-radius: u.rem(8);
                 border: 1px solid var(--color-grey-500);
-                margin-bottom: u.rem(24);
                 padding: u.rem(12) u.rem(24);
+                margin-top: u.rem(8);
+                cursor: pointer;
+
+                &:hover {
+                    border-color: var(--color-green-600);
+                }
+
+                &:focus {
+                    border-color: var(--color-green-600);
+                }
             }
         }
 
@@ -61,7 +69,6 @@ button {
             border: none;
             display: flex;
             flex-direction: column;
-            margin-bottom: u.rem(24);
             gap: u.rem(16);
 
             @include u.breakpoint(small) {
@@ -81,20 +88,38 @@ button {
                 border: 1px solid var(--color-grey-500);
                 border-radius: u.rem(8);
                 color: var(--color-grey-900);
-                margin-bottom: 0;
                 display: flex;
                 align-items: center;
                 gap: u.rem(12);
                 width: 100%;
+                cursor: pointer;
 
                 @include u.body-md;
 
-                & > input {
+                &:hover {
+                    border-color: var(--color-green-600);
+                }
+
+                &:has(input:focus) {
+                    border-color: var(--color-green-600);
+                }
+
+                &:has(input:checked) {
+                    background-color: var(--color-green-200);
+                }
+
+                & input {
                     appearance: none;
                     width: u.rem(20);
                     height: u.rem(20);
                     border: 1px solid var(--color-grey-500);
                     border-radius: 50%;
+                    cursor: pointer;
+
+                    &:checked {
+                        content: url("../images/icon-radio-selected.svg");
+                        border: none;
+                    }
                 }
             }
         }
@@ -102,8 +127,6 @@ button {
         &--message {
             display: flex;
             flex-direction: column;
-            gap: u.rem(8);
-            margin-bottom: u.rem(40);
             color: var(--color-grey-900);
 
             @include u.body-sm;
@@ -111,10 +134,17 @@ button {
             & textarea {
                 height: u.rem(240);
                 width: 100%;
+                margin-top: u.rem(8);
                 border-radius: u.rem(8);
                 border: 1px solid var(--color-grey-500);
                 padding: u.rem(12) u.rem(24);
+                cursor: pointer;
                 resize: none;
+
+                &:hover,
+                &:focus {
+                    border-color: var(--color-green-600);
+                }
 
                 @include u.breakpoint(small) {
                     height: u.rem(130);
@@ -126,7 +156,8 @@ button {
             display: flex;
             align-items: center;
             gap: u.rem(16);
-            margin-bottom: u.rem(40);
+            margin-top: u.rem(14);
+            cursor: pointer;
 
             & input {
                 appearance: none;
@@ -134,17 +165,47 @@ button {
                 height: u.rem(20);
                 border: 1px solid var(--color-grey-500);
                 border-radius: 0;
+                cursor: pointer;
+
+                &:hover,
+                &:focus {
+                    border-color: var(--color-green-600);
+                }
+
+                &:checked {
+                    content: url("../images/icon-checkbox-check.svg");
+                    border: none;
+                }
             }
         }
 
         & button {
             height: u.rem(60);
             background-color: var(--color-green-600);
-            border: 1px solid var(--color-green-600);
+            border: none;
             border-radius: u.rem(8);
             color: var(--color-white);
+            cursor: pointer;
+            margin-top: u.rem(16);
 
             @include u.body-md-bold;
+
+            &:hover,
+            &:focus {
+                background-color: var(--color-green-800);
+            }
         }
     }
+}
+
+.error-state {
+    border-color: var(--color-red);
+}
+
+.error-message {
+    padding: u.rem(8) 0;
+    color: var(--color-red);
+    opacity: 1;
+
+    @include u.body-sm;
 }
