@@ -86,7 +86,6 @@ const showToast = () => {
 
     img.src = "./images/icon-success-check.svg";
     img.alt = "";
-
     span.innerText = `Message Sent!`;
 
     p.innerText = `Thanks for completing the form, ${formData.fname}. We'll be in touch soon via email: ${formData.email}!`;
