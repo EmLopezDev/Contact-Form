@@ -196,9 +196,14 @@ button {
 
             @include u.body-md-bold;
 
-            &:hover,
+            &:hover:not(:disabled),
             &:focus {
                 background-color: var(--color-green-800);
+            }
+
+            &:disabled {
+                opacity: 50%;
+                cursor: not-allowed;
             }
         }
     }
