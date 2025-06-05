@@ -8,7 +8,7 @@ const submitButton = document.getElementById("submit");
 const errorSpans = document.querySelectorAll(".error-message");
 const toast = document.getElementById("toast");
 
-const formData = {};
+let formData = {};
 let submitAttempt = false;
 
 const addErrors = (error) => {
@@ -39,6 +39,15 @@ const nameCheck = (string) => {
 
 const emailCheck = (string) => {
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(string);
+};
+
+const clearInputs = () => {
+    firstNameInput.value = "";
+    lastNameInput.value = "";
+    emailInput.value = "";
+    queryTypeInput.forEach((input) => (input.checked = false));
+    messageInput.value = "";
+    consentInput.checked = false;
 };
 
 firstNameInput.addEventListener("input", (e) => {
@@ -79,7 +88,24 @@ consentInput.addEventListener("input", (e) => {
 });
 
 const showToast = () => {
+    const span = document.createElement("span");
+    const img = document.createElement("img");
+    const p = document.createElement("p");
+
+    img.src = "./images/icon-success-check.svg";
+    img.alt = "";
+
+    span.innerText = `Message Sent!`;
+
+    p.innerText = `Thanks for completing the form, ${formData.fname}. We'll be in touch soon via email: ${formData.email}!`;
+    span.prepend(img);
+
+    toast.appendChild(span);
+    toast.appendChild(p);
     toast.style.top = "24px";
+    setTimeout(() => {
+        toast.style.top = "-200px";
+    }, 4000);
 };
 
 const submitForm = (evt) => {
@@ -88,6 +114,9 @@ const submitForm = (evt) => {
     submitAttempt = true;
     if (canSubmit) {
         showToast();
+        clearInputs();
+        formData = {};
+        submitAttempt = false;
     } else {
         submitButton.setAttribute("disabled", "true");
     }
