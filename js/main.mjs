@@ -106,6 +106,7 @@ const showToast = () => {
     navigator.vibrate(200);
     setTimeout(() => {
         toast.style.top = "-200px";
+        toast.innerHTML = "";
     }, 4000);
 };
 
@@ -116,6 +117,7 @@ const submitForm = (evt) => {
     if (canSubmit) {
         showToast();
         clearInputs();
+        firstNameInput.focus();
         formData = {};
         submitAttempt = false;
     } else {
