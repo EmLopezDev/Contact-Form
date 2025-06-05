@@ -103,6 +103,7 @@ const showToast = () => {
     toast.appendChild(span);
     toast.appendChild(p);
     toast.style.top = "24px";
+    navigator.vibrate(200);
     setTimeout(() => {
         toast.style.top = "-200px";
     }, 4000);
