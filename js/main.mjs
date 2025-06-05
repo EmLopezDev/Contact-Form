@@ -6,6 +6,7 @@ const messageInput = document.getElementById("message");
 const consentInput = document.getElementById("consent");
 const submitButton = document.getElementById("submit");
 const errorSpans = document.querySelectorAll(".error-message");
+const form = document.getElementById("form");
 const toast = document.getElementById("toast");
 
 let formData = {};
@@ -39,15 +40,6 @@ const nameCheck = (string) => {
 
 const emailCheck = (string) => {
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(string);
-};
-
-const clearInputs = () => {
-    firstNameInput.value = "";
-    lastNameInput.value = "";
-    emailInput.value = "";
-    queryTypeInput.forEach((input) => (input.checked = false));
-    messageInput.value = "";
-    consentInput.checked = false;
 };
 
 firstNameInput.addEventListener("input", (e) => {
@@ -103,7 +95,6 @@ const showToast = () => {
     toast.appendChild(span);
     toast.appendChild(p);
     toast.style.top = "24px";
-    navigator.vibrate(200);
     setTimeout(() => {
         toast.style.top = "-200px";
         toast.innerHTML = "";
@@ -116,7 +107,7 @@ const submitForm = (evt) => {
     submitAttempt = true;
     if (canSubmit) {
         showToast();
-        clearInputs();
+        form.reset();
         firstNameInput.focus();
         formData = {};
         submitAttempt = false;
