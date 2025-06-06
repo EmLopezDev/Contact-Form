@@ -60,11 +60,11 @@ button {
             @include u.body-md;
 
             &:hover {
-                border-color: var(--color-green-600);
+                border: 2px solid var(--color-green-600);
             }
 
             &:focus {
-                border-color: var(--color-green-600);
+                border: 2px solid var(--color-green-600);
             }
         }
 
@@ -100,11 +100,11 @@ button {
                 @include u.body-md;
 
                 &:hover {
-                    border-color: var(--color-green-600);
+                    border: 2px solid var(--color-green-600);
                 }
 
                 &:has(input:focus) {
-                    border-color: var(--color-green-600);
+                    border: 2px solid var(--color-green-600);
                 }
 
                 &:has(input:checked) {
@@ -150,7 +150,7 @@ button {
 
             &:hover,
             &:focus {
-                border-color: var(--color-green-600);
+                border: 2px solid var(--color-green-600);
             }
 
             @include u.breakpoint(small) {
@@ -175,7 +175,7 @@ button {
 
                 &:hover,
                 &:focus {
-                    border-color: var(--color-green-600);
+                    border: 2px solid var(--color-green-600);
                 }
 
                 &:checked {
