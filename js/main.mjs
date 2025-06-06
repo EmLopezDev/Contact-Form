@@ -12,11 +12,28 @@ const toast = document.getElementById("toast");
 let formData = {};
 let submitAttempt = false;
 
+const errorBorders = (id, show) => {
+    const words = ["fname", "lname", "email", "message"];
+    const check = new RegExp("\\b" + words.join("|") + "\\b", "i");
+
+    if (check.test(id) && show) {
+        document.getElementById(id).classList.add("error-border");
+    }
+
+    if (check.test(id) && !show) {
+        document.getElementById(id).classList.remove("error-border");
+    }
+};
+
 const addErrors = (error) => {
     const errorId = error.id.split("-")[0];
-    !formData[`${errorId}`]
-        ? error.classList.remove("hidden")
-        : error.classList.add("hidden");
+    if (!formData[errorId]) {
+        error.classList.remove("hidden");
+        errorBorders(errorId, true);
+    } else {
+        error.classList.add("hidden");
+        errorBorders(errorId, false);
+    }
 };
 
 const removeErrors = (error) => {
