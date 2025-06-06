@@ -35,7 +35,7 @@ const validate = () => {
 };
 
 const nameCheck = (string) => {
-    return /^[a-zA-Z]+$/g.test(string);
+    return /^[a-zA-Z ]+$/g.test(string);
 };
 
 const emailCheck = (string) => {
